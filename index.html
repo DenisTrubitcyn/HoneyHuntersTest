@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./style/main.css" />
+    <title>Honey Hunters</title>
+  </head>
+  <body>
+    <div class="wrapper pt-5 pb-5">
+      <header class="wrapper__header mb-5">
+        <div class="container">
+          <a href="https://honey-hunters.ru/ru/main.html"><img src="./img/logo.png" alt="logo" class="img-fluid" style="max-width: 300px" /></a>
+        </div>
+      </header>
+      <main>
+        <header>
+          <div class="container">
+            <img src="./img/header__icon.png" alt="icon" class="img-fluid mx-auto mb-5" style="max-width: 250px" />
+          </div>
+        </header>
+        <section class="container">
+          <div class="col-md-12">
+            <form action="#">
+              <div class="row d-flex justify-content-between mb-5">
+                <div class="col-md-6">
+                  <div class="col-md-8">
+                    <div class="form-group">
+                      <label for="username" class="form-title fs-3 text-white-50" required>Имя</label>
+                      <input type="text" class="form-control bg-transparent mt-2 mb-2" />
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="form-group">
+                      <label for="email" class="form-title fs-3 text-white-50" required>E-Mail</label>
+                      <input type="email" class="form-control bg-transparent mt-3" />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-5">
+                  <label for="comment" class="form-title fs-3 text-white-50" required>Комментарий</label>
+                  <textarea  class="form-control h-75 textarea bg-transparent mt-2"></textarea>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-lg fs-3 fw-bold button">Записать</button>
+          </div>
+        </section>
+        <div class="bgc-com mt-5 mb-5 pb-5">
+          <section class="container">
+            <div class="com__title mt-5 mb-5">
+              <p class="text-center h2 fs-1 p-3">Выводим комментарии</p>
+            </div>
+            <div class="row d-flex flex-wrap justify-content-between col-md-12">
+              <div class="text-center col-md-3 mb-2">
+                <p class="card__title h3 pt-2 pb-2">Вася</p>
+                <div class="card__main">
+                  <p class="card__email fw-bold p-3">vasy@gmail.com</p>
+                  <p class="card__text p-4"> сообщение от Василия Пупкина</p>
+                </div>
+              </div>
+              <div class="text-center col-md-3 mb-2">
+                <p class="card__title h3 pt-2 pb-2">Вася</p>
+                <div class="card__main">
+                  <p class="card__email fw-bold p-3">vasy@gmail.com</p>
+                  <p class="card__text p-4"> сообщение от Василия Пупкина</p>
+                </div>
+              </div>
+              <div class="text-center col-md-3 mb-2">
+                <p class="card__title h3 pt-2 pb-2">Вася</p>
+                <div class="card__main">
+                  <p class="card__email fw-bold p-3">vasy@gmail.com</p>
+                  <p class="card__text p-4"> сообщение от Василия Пупкина</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+      <footer>
+        <div class="container">
+          <div class="footer__wrapper flex-md-row d-flex justify-content-between">
+            <div class="footer__logo w-50 img-fluid" style="max-width: 250px;">
+              <a href="https://honey-hunters.ru/ru/main.html"><img src="./img/logo.png" alt="logo"></a>
+            </div>
+            <div class="footer__icons col-md-2 d-md-flex justify-content-md-end">
+              <button class="btn__icon m-2">
+                <a href="https://www.facebook.com/honeyhuntersmanagement/">
+                  <svg class="footer__icon">
+                    <use xlink:href="./img/sprite.svg#facebook"></use>
+                  </svg></a>
+              </button>
+              <button class="btn__icon m-2">
+                <svg style="display:none;">
+                  <symbol id="vkontakte" viewBox="0 0 48 48">
+                    <path d="M45.763,35.202c-1.797-3.234-6.426-7.12-8.337-8.811c-0.523-0.463-0.579-1.264-0.103-1.776 c3.647-3.919,6.564-8.422,7.568-11.143C45.334,12.27,44.417,11,43.125,11l-3.753,0c-1.237,0-1.961,0.444-2.306,1.151 c-3.031,6.211-5.631,8.899-7.451,10.47c-1.019,0.88-2.608,0.151-2.608-1.188c0-2.58,0-5.915,0-8.28 c0-1.147-0.938-2.075-2.095-2.075L18.056,11c-0.863,0-1.356,0.977-0.838,1.662l1.132,1.625c0.426,0.563,0.656,1.248,0.656,1.951 L19,23.556c0,1.273-1.543,1.895-2.459,1.003c-3.099-3.018-5.788-9.181-6.756-12.128C9.505,11.578,8.706,11.002,7.8,11l-3.697-0.009 c-1.387,0-2.401,1.315-2.024,2.639c3.378,11.857,10.309,23.137,22.661,24.36c1.217,0.12,2.267-0.86,2.267-2.073l0-3.846 c0-1.103,0.865-2.051,1.977-2.079c0.039-0.001,0.078-0.001,0.117-0.001c3.267,0,6.926,4.755,8.206,6.979 c0.368,0.64,1.056,1.03,1.8,1.03l4.973,0C45.531,38,46.462,36.461,45.763,35.202z"/>
+                  </symbol>
+                </svg>
+                <a href="https://vk.com/obslyzhivaniesaitov"><svg class="footer__icon">
+                  <use xlink:href="#vkontakte"></use>
+                </svg></a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+  </body>
+</html>

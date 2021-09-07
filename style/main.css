@@ -1,0 +1,97 @@
+@import './none_styles.css';
+
+.form-title:after {
+  color: red;
+  content: ' *';
+}
+.wrapper {
+  background-color: #2d3136;
+}
+input[type] {
+  border: 2px #4c4f53 solid;
+  border-radius: 3px;
+  background: #2f3338;
+}
+.form-control {
+  color: rgb(190, 190, 190);
+}
+.form-control:focus {
+  box-shadow: none;
+  border: 2px #743538 solid;
+  caret-color: #fff;
+  color: rgb(190, 190, 190);
+}
+.textarea {
+  border: 2px #4c4f53 solid;
+  border-radius: 3px;
+  resize: none;
+  overflow: auto;
+  background: #2f3338;
+  height: auto;
+}
+.button {
+  background: #be393b;
+  color: #fff;
+  transition: all 1s ease !important;
+}
+.btn:focus {
+  box-shadow: none !important;
+}
+.btn:hover {
+  color: #fff;
+  background-color: #c41417;
+  border-radius: 20px;
+  transition: all 1s ease !important;
+}
+.bgc-com {
+  background-color: #fff;
+  border-top: 1px #fff solid;
+}
+.h3 {
+  margin-bottom: 0 !important;
+}
+.h2 {
+  color: #37414e !important;
+}
+.card__title {
+  background-color: #4b596c;
+  color: #fff;
+}
+.card__main {
+  background-color: #e9eef3;
+}
+.card__email {
+  color: #6d737b;
+}
+.card__text {
+  color: #767582;
+}
+
+.btn__icon {
+  border: 2px #454648 solid;
+  height: 2em;
+  width: 2em;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: all 0.3s ease !important;
+}
+.btn__icon:hover {
+  border: 2px #fff solid;
+  fill: #fff;
+}
+.footer__icon {
+  height: 1em;
+  width: 1em;
+  fill: #656566;
+  transition: all 0.2s ease !important;
+}
+.btn__icon:hover .footer__icon {
+  fill: #fff;
+  transition: all 0.2s ease !important;
+}
+@media(max-width: 426px){
+  .footer__logo{
+    margin: auto;
+  }
+
+}
