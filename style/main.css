@@ -21,6 +21,9 @@ input[type] {
   caret-color: #fff;
   color: rgb(190, 190, 190);
 }
+.errorEnter {
+  border: 2px #e28d0e solid !important;
+}
 .textarea {
   border: 2px #4c4f53 solid;
   border-radius: 3px;
@@ -34,9 +37,9 @@ input[type] {
   color: #fff;
   transition: all 1s ease !important;
 }
-.btn:focus {
+/* .btn:focus {
   box-shadow: none !important;
-}
+} */
 .btn:hover {
   color: #fff;
   background-color: #c41417;
@@ -64,6 +67,8 @@ input[type] {
   color: #6d737b;
 }
 .card__text {
+  max-height: 200px;
+  overflow: auto;
   color: #767582;
 }
 
@@ -89,9 +94,8 @@ input[type] {
   fill: #fff;
   transition: all 0.2s ease !important;
 }
-@media(max-width: 426px){
-  .footer__logo{
+@media (max-width: 426px) {
+  .footer__logo {
     margin: auto;
   }
-
 }
