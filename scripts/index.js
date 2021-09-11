@@ -6,6 +6,20 @@ const email = form.querySelector('.email')
 const comment = form.querySelector('.comment')
 const cards = document.querySelector('.cards')
 const requestURL = 'https://613b4251110e000017a4553b.mockapi.io/api/v1/cards'
+
+const handleChange = () => {
+  for (const field of fields) {
+    if (field.value === '') {
+      validatebtn.setAttribute('disabled', '')
+      return
+    }
+  }
+  validatebtn.removeAttribute('disabled')
+}
+for (const field of fields) {
+  field.onkeydown = field.onkeyup = field.onkeypress = field.change = handleChange
+}
+
 // ============================================================================================
 if (addEventListener in document) {
   resize()
@@ -117,13 +131,6 @@ const removeValidation = function () {
   const errors = form.querySelectorAll('.error')
   for (let i = 0; i < errors.length; i++) {
     errors[i].remove()
-  }
-}
-
-const validationValue = function (el) {
-  array.push(el)
-  if (array.length === fields.length) {
-    validatebtn.removeAttribute('disabled')
   }
 }
 
