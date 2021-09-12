@@ -6,7 +6,7 @@ const email = form.querySelector('.email')
 const comment = form.querySelector('.comment')
 const cards = document.querySelector('.cards')
 const requestURL = 'https://613b4251110e000017a4553b.mockapi.io/api/v1/cards'
-
+const arrCards = []
 const handleChange = () => {
   for (const field of fields) {
     if (field.value === '') {
@@ -45,12 +45,16 @@ function receiveRequest(method, url) {
 // ===========================================================
 const addCardsToHtmlForDb = (data) => {
   const arrayCards = data
-  for (i = 0; i < arrayCards.length; i++) {
-    let arr = arrayCards[i]
-    for (let key in arr) {
-      if (key == 'card') {
-        const card = arr[key]
-        appendHtml(card)
+  if (arrayCards.length == 0) {
+    arrCards.length = 0
+  } else {
+    for (i = 0; i < arrayCards.length; i++) {
+      let arr = arrayCards[i]
+      for (let key in arr) {
+        if (key == 'card') {
+          const card = arr[key]
+          appendHtml(card)
+        }
       }
     }
   }
@@ -89,33 +93,58 @@ const array = []
 
 const validationEmail = () => {
   removeValidation()
+  const titlegreen = 'titlegreen'
+  const emailgreen = 'emailgreen'
+  const cardgreen = 'cardgreen'
   const reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/
   if (reg.test(email.value) == false) {
     const error = generateError('Введите корректный E-mail')
     email.parentElement.insertBefore(error, email)
     return false
   } else {
-    const card = `
+    const cardGreen = `
                 <div class="text-center col-md-4 mb-3">
-                  <p class="card__title h3 pt-2 pb-2">${username.value.firstLetterCaps()}</p>
-                  <div class="card__main">
-                    <p class="card__email fw-bold p-3">${email.value}</p>
+                  <p class="card__title ${titlegreen} h3 pt-2 pb-2">${username.value.firstLetterCaps()}</p>
+                  <div class="card__main ${cardgreen}">
+                    <p class="card__email ${emailgreen} fw-bold p-3">${email.value}</p>
                     <div class="card__text">
                       <p class="card__text p-4">${comment.value.firstLetterCaps()}</p>
                     </div>
                   </div>
                 </div>
                 `
-    const body = {
-      card: card,
+    const card = `
+                <div class="text-center col-md-4 mb-3">
+                  <p class="card__title  h3 pt-2 pb-2">${username.value.firstLetterCaps()}</p>
+                  <div class="card__main ">
+                    <p class="card__email  fw-bold p-3">${email.value}</p>
+                    <div class="card__text">
+                      <p class="card__text p-4">${comment.value.firstLetterCaps()}</p>
+                    </div>
+                  </div>
+                </div>
+                `
+    if (arrCards.length % 2 == 0) {
+      arrCards.push(cardGreen)
+      const body = {
+        card: cardGreen,
+      }
+      appendHtml(cardGreen)
+      clearValue()
+      sendRequest('POST', requestURL, body)
+        .then((data) => addCardsToHtmlForDb(data))
+        .catch((err) => console.log(err))
+    } else {
+      arrCards.push(card)
+      const body = {
+        card: card,
+      }
+      appendHtml(card)
+      clearValue()
+      sendRequest('POST', requestURL, body)
+        .then((data) => addCardsToHtmlForDb(data))
+        .catch((err) => console.log(err))
     }
-    sendRequest('POST', requestURL, body)
-      .then((data) => console.log(data))
-      .catch((err) => console.log(err))
-
-    clearValue()
-
-    appendHtml(card)
   }
 }
 
